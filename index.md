@@ -1,20 +1,18 @@
 ---
 layout: default
-title: "Long (Tony) Lian's Personal Website"
+title: "Matthew Moisseyev"
 ---
 
 <div class="row">
     <div class="col-md-8">
         <h1 class="page-title">
-            <img class="profile-img-small d-md-none" src="{{ '/assets/profile.jpg' | relative_url }}" alt="Long (Tony) Lian" />
-            Long (Tony) Lian
+            <img class="profile-img-small d-md-none" src="{{ '/assets/profile.jpg' | relative_url }}" alt="Matthew Moisseyev" />
+            Matthew Moisseyev
         </h1>
         <div class="social-links">
-            <a href="mailto:longlian@berkeley.edu" title="Email"><i class="fas fa-envelope"></i></a>
-            <a href="https://scholar.google.com/citations?user=eOLxyqUAAAAJ" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-            <a href="https://twitter.com/LongTonyLian" title="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/longlian" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/TonyLianLong" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:mmoisseyev2@unl.edu" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/matthew-moisseyev" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/mmoiss" title="GitHub"><i class="fab fa-github"></i></a>
         </div>
         <section id="about" class="mt-4">
             <!-- <h2 class="section-title">About</h2> -->

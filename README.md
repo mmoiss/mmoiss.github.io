@@ -1,5 +1,5 @@
 # Website
-Tony Lian's personal website served at [https://tonylian.com](https://tonylian.com). This is a remodel of a previous website in LaTeX-style.
+This is Matthew Moisseyev's personal website made from Tony Lian's personal website template that can be found at [https://github.com/TonyLianLong/websitev2].
 
 ## LICENSE
 Fonts and libraries have their own license. Other than that, this website uses MIT License.

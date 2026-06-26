@@ -1,6 +1,8 @@
 ---
 ---
 
+@use "sass:color";
+
 // Modern color scheme
 $primary-color: #2c3e50;
 $secondary-color: #3498db;
@@ -118,7 +120,7 @@ html {
         transition: color 0.2s ease;
         
         &:hover {
-            color: darken($secondary-color, 10%);
+            color: color.adjust($secondary-color, $lightness: -10%);
         }
     }
 }
@@ -132,7 +134,7 @@ a {
     display: inline-block;
     
     &:hover {
-        color: darken($secondary-color, 10%);
+        color: color.adjust($secondary-color, $lightness: -10%);
     }
 }
 
