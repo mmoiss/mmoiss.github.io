@@ -5,3 +5,5 @@ sass:
 collections:
   publications:
     output: false
+  hackathons:
+    output: false
