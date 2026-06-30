@@ -23,15 +23,26 @@ title: "Matthew Moisseyev"
         </section>
     </div>
     <div class="col-md-4">
-        <img class="profile-img d-none d-md-block" src="{{ '/assets/profile.jpg' | relative_url }}" alt="Long (Tony) Lian" />
+        <img class="profile-img d-none d-md-block" src="{{ '/assets/profile.jpg' | relative_url }}" alt="Matthew Moisseyev" />
     </div>
 </div>
 
 {% assign sorted_publications = site.publications | sort:"date" %}
 {% assign selected_publications = sorted_publications | where:"selected", true %}
 
+<section id="hackathons" class="mt-5">
+    <h2 class="section-title"><b>Hackathons</b></h2>
+    <div class="hackathons-list">
+        {% assign sorted_hackathons = site.hackathons | sort: "order" %}
+        {% for project in sorted_hackathons %}
+            {% include project_item.html %}
+        {% endfor %}
+    </div>
+</section>
+
+<!-- 
 <section id="publications" class="mt-5">
-    <h2 class="section-title">Publications <span class="h6">(*: equal contribution)</span></h2>
+    <h2 class="section-title">Research</h2>
     <div class="publications-list">
         {% for publication in selected_publications reversed %}
             {% include publication_item.html %}
@@ -43,32 +54,5 @@ title: "Matthew Moisseyev"
         {% endfor %}
     </div>
 </section>
+-->
 
-<section id="projects" class="mt-5">
-    <h2 class="section-title">Side Projects</h2>
-    <div class="projects-list">
-        <div class="project-item mb-4">
-            <h3 class="project-title">Stable Diffusion XL Demo WebUI</h3>
-            <p>A gradio-based WebUI that allows playing around with <a href="https://arxiv.org/abs/2307.01952">SDXL</a> locally and on Colab for free.</p>
-            <div class="publication-links">
-                <a href="https://github.com/TonyLianLong/stable-diffusion-xl-demo" class="btn btn-outline-primary btn-sm"><i class="fas fa-code"></i> Code</a>
-                <a target="_blank" href="https://colab.research.google.com/github/TonyLianLong/stable-diffusion-xl-demo/blob/main/Stable_Diffusion_XL_Demo.ipynb" class="btn btn-outline-primary btn-sm"><i class="fas fa-play-circle"></i> Demo</a>
-            </div>
-        </div>
-        <div class="project-item mb-4">
-            <h3 class="project-title">AnimeGAN.js</h3>
-            <p>An implementation of AnimeGAN, which converts photos to anime style online, with <a href="https://github.com/tensorflow/tfjs">tf.js</a>.</p>
-            <div class="publication-links">
-                <a href="https://github.com/TonyLianLong/AnimeGAN.js" class="btn btn-outline-primary btn-sm"><i class="fas fa-code"></i> Code</a>
-                <a target="_blank" href="https://animegan.js.org/" class="btn btn-outline-primary btn-sm"><i class="fas fa-play-circle"></i> Demo</a>
-            </div>
-        </div>
-        <div class="project-item mb-4">
-            <h3 class="project-title">Rainbow</h3>
-            <p>An implementation of Rainbow algorithm with <a href="https://github.com/PaddlePaddle/PARL">PARL</a> reinforcement learning framework.</p>
-            <div class="publication-links">
-                <a href="https://github.com/TonyLianLong/Rainbow" class="btn btn-outline-primary btn-sm"><i class="fas fa-code"></i> Code</a>
-            </div>
-        </div>
-    </div>
-</section>

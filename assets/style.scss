@@ -200,3 +200,9 @@ a {
     color: $secondary-color;
     border-color: $secondary-color;
 }
+
+.project-logo {
+    height: 120px;
+    width: auto;
+    flex-shrink: 0;
+}
