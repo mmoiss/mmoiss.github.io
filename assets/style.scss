@@ -80,6 +80,13 @@ html {
     margin: 0.75rem 0 0.5rem;
     text-decoration: none;
 }
+.hackathon-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: $primary-color;
+    margin: 0.75rem 0 0.5rem;
+    text-decoration: none;
+}
 
 // Publication styles
 .publication-venue {
@@ -201,7 +208,13 @@ a {
     border-color: $secondary-color;
 }
 
-.project-logo {
+.project-image {
+    height: 160px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.hackathon-logo {
     height: 120px;
     width: auto;
     flex-shrink: 0;

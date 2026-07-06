@@ -30,12 +30,22 @@ title: "Matthew Moisseyev"
 {% assign sorted_publications = site.publications | sort:"date" %}
 {% assign selected_publications = sorted_publications | where:"selected", true %}
 
+<section id="projects" class="mt-5">
+    <h2 class="section-title"><b>Projects</b></h2>
+    <div class="projects-list">
+        {% assign sorted_projects = site.projects | sort: "order" %}
+        {% for project in sorted_projects %}
+            {% include project_item.html %}
+        {% endfor %}
+    </div>
+</section>
+
 <section id="hackathons" class="mt-5">
     <h2 class="section-title"><b>Hackathons</b></h2>
     <div class="hackathons-list">
         {% assign sorted_hackathons = site.hackathons | sort: "order" %}
-        {% for project in sorted_hackathons %}
-            {% include project_item.html %}
+        {% for hackathon in sorted_hackathons %}
+            {% include hackathon_item.html %}
         {% endfor %}
     </div>
 </section>
