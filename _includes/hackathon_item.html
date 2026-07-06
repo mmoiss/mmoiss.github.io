@@ -1,0 +1,16 @@
+<div class="hackathon-item mb-4">
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <h3 class="hackathon-title"><b>{{ hackathon.title }}</b></h3>
+            <p>{{ hackathon.description }}</p>
+            {% if hackathon.code_url %}
+            <div class="publication-links">
+                <a href="{{ hackathon.code_url }}" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fas fa-code"> Code</i></a>
+            </div>
+            {% endif %}
+        </div>
+        {% if hackathon.logo %}
+        <img src="{{ '/assets/hackathon-logos/' | append: hackathon.logo | relative_url }}" class="hackathon-logo ms-5" alt="{{ hackathon.title }} logo">
+        {% endif %}
+    </div>
+</div>

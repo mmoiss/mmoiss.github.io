@@ -7,3 +7,5 @@ collections:
     output: false
   hackathons:
     output: false
+  projects:
+    output: false
