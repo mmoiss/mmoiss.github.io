@@ -1,15 +1,15 @@
 <div class="publication-item mb-4">
     <div class="row">
         <div class="col-md-7">
-            <h3 class="publication-title">{{ publication.title }}</h3>
-            <div class="publication-authors">{{publication.authors | markdownify}}</div>
+            <h3 class="publication-title"><b> {{ publication.title }}</b></h3>
+            <span style="color: rgb(160, 160, 160); font-size: 0.85em;"> Date: {{ publication.date | date: "%B %-d, %Y" }};</span>
+            <span style="color: rgb(160, 160, 160); font-size: 0.85em;"> Authors: {{ publication.authors }}</span>
             {% if publication.venue %}
                 <div class="publication-venue">{{publication.venue | markdownify}}</div>
             {% endif %}
             <div class="publication-excerpt" style="display: none">{{publication.excerpt | markdownify}}</div>
-            {% if publication.paper_url %}
             <div class="publication-links">
-                <a href="{{publication.paper_url}}" class="btn btn-outline-primary btn-sm"><i class="fas fa-file-alt"></i> Paper</a>
+                {% if publication.paper_url %} <a href="{{publication.paper_url}}" class="btn btn-outline-primary btn-sm"><i class="fas fa-file-alt"></i> Paper</a> {% endif %}
                 {% if publication.blog_url %}<a href="{{publication.blog_url}}" class="btn btn-outline-primary btn-sm"><i class="fas fa-blog"></i> Blog</a>{% endif %}
                 {% if publication.project_page_url %}<a href="{{publication.project_page_url}}" class="btn btn-outline-primary btn-sm"><i class="fas fa-project-diagram"></i> Project</a>{% endif %}
                 {% if publication.demo_url %}<a href="{{publication.demo_url}}" class="btn btn-outline-primary btn-sm"><i class="fas fa-play-circle"></i> Demo</a>{% endif %}
@@ -20,7 +20,6 @@
                 {% if publication.bibtex_url %}<a href="{{publication.bibtex_url}}" class="btn btn-outline-primary btn-sm"><i class="fas fa-quote-right"></i> BibTex</a>{% endif %}
                 {% if publication.excerpt %}<a href="#" class="btn btn-outline-primary btn-sm tldr_btn"><i class="fas fa-info-circle"></i> TL;DR</a>{% endif %}
             </div>
-            {% endif %}
         </div>
         {% if publication.cover_image %}
         <div class="col-md-5 d-none d-md-block">

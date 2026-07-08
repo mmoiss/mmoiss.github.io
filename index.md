@@ -30,6 +30,20 @@ title: "Matthew Moisseyev"
 {% assign sorted_publications = site.publications | sort:"date" %}
 {% assign selected_publications = sorted_publications | where:"selected", true %}
 
+<section id="publications" class="mt-5">
+    <h2 class="section-title"><b>Research</b></h2>
+    <div class="publications-list">
+        {% for publication in selected_publications reversed %}
+            {% include publication_item.html %}
+        {% endfor %}
+        {% for publication in sorted_publications reversed %}
+            {% unless publication.selected %}
+                {% include publication_item.html %}
+            {% endunless %}
+        {% endfor %}
+    </div>
+</section>
+
 <section id="projects" class="mt-5">
     <h2 class="section-title"><b>Projects</b></h2>
     <div class="projects-list">
@@ -50,19 +64,5 @@ title: "Matthew Moisseyev"
     </div>
 </section>
 
-<!-- 
-<section id="publications" class="mt-5">
-    <h2 class="section-title">Research</h2>
-    <div class="publications-list">
-        {% for publication in selected_publications reversed %}
-            {% include publication_item.html %}
-        {% endfor %}
-        {% for publication in sorted_publications reversed %}
-            {% unless publication.selected %}
-                {% include publication_item.html %}
-            {% endunless %}
-        {% endfor %}
-    </div>
-</section>
--->
+
 
