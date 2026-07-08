@@ -4,9 +4,10 @@
             <h3 class="project-title"><b>{{ project.title }}</b></h3>
             <span style="color: rgb(160, 160, 160); font-size: 0.85em;"> Tools: {{ project.tools }}</span>
             <p>{{ project.description }}</p>
-            {% if project.code_url %}
+            {% if project.code_url or project.demo_media %}
             <div class="publication-links">
-                <a href="{{ project.code_url }}" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fas fa-code"> Code</i></a>
+                {% if project.code_url %}<a href="{{ project.code_url }}" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fas fa-code"></i> Code</a>{% endif %}
+                {% if project.demo_media %}<a href="{{ '/assets/' | append: project.demo_media | relative_url }}" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fas fa-play-circle"></i> Demo</a>{% endif %}
             </div>
             {% endif %}
         </div>
