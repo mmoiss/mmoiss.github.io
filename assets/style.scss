@@ -3,18 +3,29 @@
 
 @use "sass:color";
 
+:root {
+    --bg-color: #fff;
+    --primary-color: #2c3e50;
+    --text-color: #333;
+}
+
+[data-theme="dark"] {
+    --bg-color: #212122;
+    --primary-color: #eeeeee;
+    --text-color: #c9c9c9;
+}
+
 // Modern color scheme
-$primary-color: #2c3e50;
 $secondary-color: #5299c9;
 $light-gray: #f8f9fa;
 $border-color: #e9ecef;
-$text-color: #333;
 
 
 // Base styles
 html, body {
     font-family: "Computer Modern Serif", "Palatino", "Perpetua", "Baskerville", "Lucida Console", "Florence", "Times New Roman", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
-    color: $text-color;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
@@ -53,7 +64,7 @@ html {
 .page-title {
     font-size: 2.5rem;
     font-weight: 600;
-    color: $primary-color;
+    color: var(--primary-color);
     margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
 }
@@ -61,7 +72,7 @@ html {
 .section-title {
     font-size: 1.75rem;
     font-weight: 500;
-    color: $primary-color;
+    color: var(--primary-color);
     margin: 2rem 0 1rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid $border-color;
@@ -70,21 +81,21 @@ html {
 .publication-title, .subsection-title {
     font-size: 1.2rem;
     font-weight: 500;
-    color: $primary-color;
+    color: var(--primary-color);
     margin: 1rem 0 0rem;
 }
 
 .project-title {
     font-size: 1.2rem;
     font-weight: 500;
-    color: $primary-color;
+    color: var(--primary-color);
     margin: 0.75rem 0 0rem;
     text-decoration: none;
 }
 .hackathon-title {
     font-size: 1.2rem;
     font-weight: 500;
-    color: $primary-color;
+    color: var(--primary-color);
     margin: 0.75rem 0 0.5rem;
     text-decoration: none;
 }
@@ -107,9 +118,11 @@ html {
         margin: 0;
     }
 }
+:root { --surface-tint: black; }
+[data-theme="dark"] { --surface-tint: white; }
 
 .publication-excerpt {
-    background-color: $light-gray;
+    background-color: color-mix(in srgb, var(--bg-color) 93%, var(--surface-tint));
     padding: 1rem;
     border-radius: 4px;
     margin: 0.5rem 0;
@@ -151,7 +164,7 @@ a {
     width: 100%;
     margin-top: 3rem;
     padding: 2rem 0;
-    background-color: $light-gray;
+    background-color: var(--bg-color);
     border-top: 1px solid $border-color;
     
     .text-muted {
@@ -172,6 +185,7 @@ a {
 .project-image {
     height: 160px;
     width: auto;
+    border-radius: 4px;
     flex-shrink: 0;
 }
 // Hackathon Logo
@@ -197,7 +211,7 @@ a {
 .note {
     margin: 1rem 0;
     padding: 1rem;
-    background-color: #fff3f3;
+    background-color: var(--bg-color);
     border-left: 4px solid #d4382a;
     color: #d4382a;
     border-radius: 0 4px 4px 0;
@@ -214,12 +228,37 @@ a {
         &:last-child {
             margin-right: 0;
         }
+
+        &:hover {
+        color: color.adjust($secondary-color, $lightness: -10%);
+        }
+    }
+}
+
+// Theme toggle
+#toggle-theme {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+    cursor: pointer;
+    color: $secondary-color;
+    transition: color 0.1s ease;
+
+    &:hover {
+        color: color.adjust($secondary-color, $lightness: -10%);
     }
 }
 
 .btn-outline-primary {
     color: $secondary-color;
     border-color: $secondary-color;
+
+    &:hover {
+        background-color: color.adjust($secondary-color, $lightness: 15%);
+        border-color: $secondary-color;
+        color: #fff;
+    }
 }
 
 
