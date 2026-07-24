@@ -11,8 +11,8 @@ title: "Matthew Moisseyev"
         </h1>
         <div class="social-links">
             <a href="mailto:mmoisseyev2@unl.edu" title="Email"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/matthew-moisseyev" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/mmoiss" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/matthew-moisseyev" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/mmoiss" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
         </div>
         <section id="about" class="mt-4">
             <!-- <h2 class="section-title">About</h2> -->
