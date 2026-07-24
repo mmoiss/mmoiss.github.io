@@ -43,18 +43,36 @@
     <script>
       // Smooth scroll
       $(document).ready(function() {
-          // Theme Toggle
-          var current = document.documentElement.getAttribute('data-theme');
-          $("#toggle-theme i").attr('class', current === 'dark' ? 'far fa-sun' : 'far fa-moon');
+        // Theme Toggle
+        var current = document.documentElement.getAttribute('data-theme');
+        $("#toggle-theme i").attr('class', current === 'dark' ? 'far fa-sun' : 'far fa-moon');
 
-          $("#toggle-theme").click(function() {
-            var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-            $(this).find('i').attr('class', next === 'dark' ? 'far fa-sun' : 'far fa-moon');
+        $("#toggle-theme").click(function() {
+          var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+          $(this).find('i').attr('class', next === 'dark' ? 'far fa-sun' : 'far fa-moon');
 
-          })
+        })
 
+        // Lightbox
+        $(".project-image, .cover-image").addClass("lightbox-trigger");
+
+        $(".lightbox-trigger").click(function(e) {
+          e.preventDefault();
+          $("#lightbox img").attr({ src: this.href || this.src, alt: this.title || this.alt || "" });
+          $("#lightbox").addClass("open");
+          $("body").css("overflow", "hidden");
+        })
+
+        $("#lightbox").click(function() {
+          $(this).removeClass("open");
+          $("body").css("overflow", "");
+        })
+
+        $(document).keydown(function(e) {
+          if (e.key === "Escape") $("#lightbox").click();
+        })
 
         // Toggle publication excerpts
         $(".tldr_btn").click(function(e) {
@@ -81,6 +99,10 @@
     </script>
   </head>
   <body>
+    <div id="lightbox" role="dialog" aria-modal="true">
+      <img src="" alt="" />
+    </div>
+
     <main role="main" class="container fade-in">
       {{ content }}
     </main>

@@ -16,7 +16,7 @@
                 {% if publication.video_url %}<a href="{{publication.video_url}}" class="btn btn-outline-primary btn-sm"><i class="fas fa-video"></i> Video</a>{% endif %}
                 {% if publication.demo_video_url %}<a href="{{publication.demo_video_url}}" class="btn btn-outline-primary btn-sm"><i class="fas fa-film"></i> Demo Video</a>{% endif %}
                 {% if publication.code_url %}<a href="{{publication.code_url}}" class="btn btn-outline-primary btn-sm"><i class="fas fa-code"></i> Code</a>{% endif %}
-                {% if publication.poster %}<a href="{{'/assets/posters/' | append: publication.poster | relative_url }}" class="btn btn-outline-primary btn-sm"><i class="fas fa-file-image"></i> Poster</a>{% endif %}
+                {% if publication.poster %}<a href="{{'/assets/posters/' | append: publication.poster | relative_url }}" class="btn btn-outline-primary btn-sm lightbox-trigger" title="{{ publication.title }} poster"><i class="fas fa-file-image"></i> Poster</a>{% endif %}
                 {% if publication.bibtex_url %}<a href="{{publication.bibtex_url}}" class="btn btn-outline-primary btn-sm"><i class="fas fa-quote-right"></i> BibTex</a>{% endif %}
                 {% if publication.excerpt %}<a href="#" class="btn btn-outline-primary btn-sm tldr_btn"><i class="fas fa-info-circle"></i> TL;DR</a>{% endif %}
             </div>
