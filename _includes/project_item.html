@@ -12,7 +12,7 @@
             {% endif %}
         </div>
         {% if project.image %}
-        <img src="{{ '/assets/project-images/' | append: project.image | relative_url }}" class="project-image ms-5" alt="{{ project.title }} image">
+        <img src="{{ '/assets/project-images/' | append: project.image | relative_url }}" class="project-image ms-5 d-none d-md-block" alt="{{ project.title }} image">
         {% endif %}
     </div>
 </div>

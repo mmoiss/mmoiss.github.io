@@ -10,7 +10,7 @@
             {% endif %}
         </div>
         {% if hackathon.logo %}
-        <img src="{{ '/assets/hackathon-logos/' | append: hackathon.logo | relative_url }}" class="hackathon-logo ms-5" alt="{{ hackathon.title }} logo">
+        <img src="{{ '/assets/hackathon-logos/' | append: hackathon.logo | relative_url }}" class="hackathon-logo ms-5 d-none d-md-block" alt="{{ hackathon.title }} logo">
         {% endif %}
     </div>
 </div>
