@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Matthew Moisseyev"
+title: "Matvey (Matthew) M."
 ---
 
 <div class="row">
     <div class="col-md-8">
         <h1 class="page-title">
-            <img class="profile-img-small d-md-none" src="{{ '/assets/profile.jpg' | relative_url }}" alt="Matthew Moisseyev" />
-            Matthew Moisseyev
+            <img class="profile-img-small d-md-none" src="{{ '/assets/profile.jpg' | relative_url }}" alt="Matvey (Matthew) Moisseyev" />
+            Matvey (Matthew) Moisseyev
         </h1>
         <div class="social-links">
             <a href="mailto:mmoisseyev2@unl.edu" title="Email"><i class="fas fa-envelope"></i></a>
@@ -23,7 +23,7 @@ title: "Matthew Moisseyev"
         </section>
     </div>
     <div class="col-md-4">
-        <img class="profile-img d-none d-md-block" src="{{ '/assets/profile.jpg' | relative_url }}" alt="Matthew Moisseyev" />
+        <img class="profile-img d-none d-md-block" src="{{ '/assets/profile.jpg' | relative_url }}" alt="Matvey (Matthew) Moisseyev" />
     </div>
 </div>
 
