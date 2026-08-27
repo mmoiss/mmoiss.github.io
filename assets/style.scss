@@ -282,6 +282,14 @@ a {
     filter: invert(1);
 }
 
+// No focus highlight  on non-keyboard interaction
+.btn:focus:not(:focus-visible),
+.btn-close:focus:not(:focus-visible),
+#toggle-theme:focus:not(:focus-visible) {
+    box-shadow: none;
+    outline: none;
+}
+
 .lightbox-trigger {
     cursor: pointer;
 }
