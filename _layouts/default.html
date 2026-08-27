@@ -41,6 +41,14 @@
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     
     <script>
+      // Copy BibTeX to clipboard
+      function copyBibtex(btn, srcId) {
+        navigator.clipboard.writeText(document.getElementById(srcId).textContent).then(function() {
+          btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+          setTimeout(function() { btn.innerHTML = '<i class="fas fa-copy"></i> Copy'; }, 1500);
+        });
+      }
+
       // Smooth scroll
       $(document).ready(function() {
         // Theme Toggle

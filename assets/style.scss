@@ -261,6 +261,27 @@ a {
     }
 }
 
+// BibTeX modal
+.modal-content {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+
+    pre {
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        overflow: visible;
+    }
+}
+
+.modal-title {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+[data-theme="dark"] .btn-close {
+    filter: invert(1);
+}
+
 .lightbox-trigger {
     cursor: pointer;
 }

@@ -17,7 +17,7 @@
                 {% if publication.demo_video_url %}<a href="{{publication.demo_video_url}}" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fas fa-film"></i> Demo Video</a>{% endif %}
                 {% if publication.code_url %}<a href="{{publication.code_url}}" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fas fa-code"></i> Code</a>{% endif %}
                 {% if publication.poster %}<a href="{{'/assets/posters/' | append: publication.poster | relative_url }}" class="btn btn-outline-primary btn-sm lightbox-trigger" title="{{ publication.title }} poster"><i class="fas fa-file-image"></i> Poster</a>{% endif %}
-                {% if publication.bibtex_url %}<a href="{{publication.bibtex_url}}" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fas fa-quote-right"></i> BibTex</a>{% endif %}
+                {% if publication.bibtex %}{% assign bibtex_id = publication.title | slugify %}<a href="#" data-bs-toggle="modal" data-bs-target="#bibtex-{{ bibtex_id }}" class="btn btn-outline-primary btn-sm"><i class="fas fa-quote-right"></i> BibTex</a>{% endif %}
                 {% if publication.excerpt %}<a href="#" class="btn btn-outline-primary btn-sm tldr_btn"><i class="fas fa-info-circle"></i> TL;DR</a>{% endif %}
             </div>
         </div>
@@ -27,4 +27,22 @@
         </div>
         {% endif %}
     </div>
+    {% if publication.bibtex %}
+    <div class="modal" id="bibtex-{{ bibtex_id }}" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><b>BibTeX</b></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <pre class="publication-excerpt my-0" id="bibtex-src-{{ bibtex_id }}">{{ publication.bibtex | strip }}</pre>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary btn-sm" onclick="copyBibtex(this, 'bibtex-src-{{ bibtex_id }}')"><i class="fas fa-copy"></i> Copy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
 </div>
